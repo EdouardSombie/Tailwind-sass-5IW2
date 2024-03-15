@@ -1,0 +1,14 @@
+@use "../partials/variables" as v;
+@use "sass:map";
+
+$containerSizes : (sm: 560px, md: 700px, lg: 960px, xl: 1024px, xxl: 1280px);
+
+.container{
+    margin: auto;
+    padding: 0 1rem;
+    @each $name, $size in v.$breakpoints{
+        @media screen and (min-width: $size){
+            width: map.get($containerSizes, $name);
+        }
+    }
+}
