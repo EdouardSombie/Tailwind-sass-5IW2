@@ -1,3 +1,51 @@
-$breakpoints : (sm: 640px, md: 768px, lg: 1024px, xl: 1280px, xxl: 1536px);
+@use "sass:color";
+@use "functions" as f;
+
+$breakpoints: (
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1536px,
+);
 
 $step: 0.25rem;
+
+// Couleurs //
+
+$colors: (
+	"white": #fff,
+	"black": #000,
+	"blue": #5d7a97,
+	"pink": #ff2896,
+	"orange": #ff9b65,
+	"green": #00d5d5,
+);
+
+// Radius
+
+$mainRadius: f.rem(16);
+
+:root {
+	@each $name, $value in $colors {
+		@if ($name != "white" and $name != "black") {
+			$suffix: "";
+			@for $i from 0 through 10 {
+				@if ($i == 0) {
+					$suffix: 50;
+				} @else if($i == 10) {
+					$suffix: 950;
+				} @else {
+					$suffix: $i * 100;
+				}
+				$offset: (5 - $i) * 8%;
+				$color: color.adjust($value, $lightness: $offset);
+				--#{$name}-#{$suffix}: #{$color};
+			}
+		} @else {
+			--#{$name}: #{$value};
+		}
+	}
+
+	--main-radius: #{$mainRadius};
+}

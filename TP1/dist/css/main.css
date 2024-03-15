@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"); /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
 ========
@@ -235,52 +234,115 @@ body {
   font-family: "Istok Web", sans-serif;
 }
 
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.4;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --blue-50: #d9e0e7;
+  --blue-100: #bfccd8;
+  --blue-200: #a6b7c8;
+  --blue-300: #8da3b9;
+  --blue-400: #748ea9;
+  --blue-500: #5d7a97;
+  --blue-600: #4d667e;
+  --blue-700: #3e5165;
+  --blue-800: #2e3d4b;
+  --blue-900: #1f2832;
+  --blue-950: #0f1419;
+  --pink-50: #fff4fa;
+  --pink-100: #ffcbe6;
+  --pink-200: #ffa2d2;
+  --pink-300: #ff7abe;
+  --pink-400: #ff51aa;
+  --pink-500: #ff2896;
+  --pink-600: #fe0082;
+  --pink-700: #d5006d;
+  --pink-800: #ad0058;
+  --pink-900: #840043;
+  --pink-950: #5b002f;
+  --orange-50: white;
+  --orange-100: white;
+  --orange-200: #ffeadf;
+  --orange-300: #ffd0b7;
+  --orange-400: #ffb58e;
+  --orange-500: #ff9b65;
+  --orange-600: #ff813c;
+  --orange-700: #ff6613;
+  --orange-800: #ea5200;
+  --orange-900: #c14400;
+  --orange-950: #983500;
+  --green-50: #a2ffff;
+  --green-100: #79ffff;
+  --green-200: #50ffff;
+  --green-300: #28ffff;
+  --green-400: #00fefe;
+  --green-500: #00d5d5;
+  --green-600: #00acac;
+  --green-700: #008383;
+  --green-800: #005b5b;
+  --green-900: #003232;
+  --green-950: #000909;
+  --main-radius: 1rem;
+}
+
 .mt-1 {
-  margin-top: 0.25rem;
+  margin-top: 0.25rem !important;
 }
 
 .mb-1 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem !important;
 }
 
 .mt-2 {
-  margin-top: 0.5rem;
+  margin-top: 0.5rem !important;
 }
 
 .mb-2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem !important;
 }
 
 .mt-3 {
-  margin-top: 0.75rem;
+  margin-top: 0.75rem !important;
 }
 
 .mb-3 {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem !important;
 }
 
 .mt-4 {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
 }
 
 .mb-4 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .mt-5 {
-  margin-top: 1.25rem;
+  margin-top: 1.25rem !important;
 }
 
 .mb-5 {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem !important;
 }
 
 .mt-6 {
-  margin-top: 1.5rem;
+  margin-top: 1.5rem !important;
 }
 
 .mb-6 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .container {
@@ -311,6 +373,106 @@ body {
   .container {
     width: 1280px;
   }
+}
+
+.bioCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  width: 20rem;
+  background-color: var(--blue-800);
+  color: var(--blue-500);
+  border-radius: var(--main-radius);
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+}
+.bioCard__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: rew;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0;
+}
+.bioCard__button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.bioCard__figure {
+  align-self: center;
+  margin-bottom: 1.5rem;
+}
+.bioCard__figure img {
+  border-radius: 100rem;
+  overflow: hidden;
+  width: 11rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: saturate(0);
+}
+.bioCard__h1 {
+  line-height: 1;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  background: linear-gradient(to bottom, var(--pink-500) 0%, var(--orange-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bioCard__h2 {
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+.bioCard__hr {
+  width: 100%;
+  border-color: var(--blue-500);
+  margin: 0;
+}
+.bioCard__p {
+  text-align: center;
+}
+.bioCard__footer {
+  position: relative;
+}
+.bioCard__footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--pink-500);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: -2rem;
+  transform: skewY(7deg);
+}
+.bioCard__ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

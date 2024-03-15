@@ -1,0 +1,81 @@
+@use "../partials/functions" as f;
+@use "../partials/mixins" as m;
+
+.bioCard {
+	@include m.flexbox(column, nowrap, flex-start, stretch);
+	width: f.rem(320);
+	background-color: var(--blue-800);
+	color: var(--blue-500);
+	border-radius: var(--main-radius);
+	overflow: hidden;
+	position: relative;
+	padding: f.rem(32);
+	&__header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: f.rem(16);
+		@include m.flexbox(rew, nowrap, flex-end, flex-start);
+	}
+	&__button {
+		@include m.resetButton;
+	}
+	&__figure {
+		align-self: center;
+		margin-bottom: f.rem(24);
+		img {
+			@include m.roundImage(100rem);
+			width: f.rem(176);
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			filter: saturate(0);
+		}
+	}
+	&__h1 {
+		line-height: 1;
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: f.rem(12);
+		font-size: f.rem(24);
+		@include m.textGradient(bottom, var(--pink-500), var(--orange-500));
+	}
+	&__h2 {
+		line-height: 1;
+		font-weight: 400;
+		text-align: center;
+		font-size: f.rem(20);
+		margin-top: 0;
+		margin-bottom: f.rem(24);
+	}
+	&__hr {
+		width: 100%;
+		border-color: var(--blue-500);
+		margin: 0;
+	}
+	&__p {
+		text-align: center;
+	}
+
+	&__footer {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: var(--pink-500);
+			margin-left: f.rem(-32);
+			margin-right: f.rem(-32);
+			margin-bottom: f.rem(-32);
+			transform: skewY(7deg);
+		}
+	}
+
+	&__ul {
+		@include m.resetList;
+		@include m.flexbox(row, nowrap, center, center, #{f.rem(24)});
+	}
+}

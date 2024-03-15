@@ -1,9 +1,9 @@
 @use "variables" as v;
-@for $i from 1 through 6{
-    .mt-#{$i}{
-        margin-top: $i * v.$step;
-    }
-    .mb-#{$i}{
-        margin-bottom: $i * v.$step;
-    }
+@for $i from 1 through 6 {
+	.mt-#{$i} {
+		margin-top: $i * v.$step !important;
+	}
+	.mb-#{$i} {
+		margin-bottom: $i * v.$step !important;
+	}
 }
