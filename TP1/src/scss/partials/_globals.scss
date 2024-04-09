@@ -2,6 +2,8 @@
 
 body {
 	font-family: f.$font1;
+	background-color: var(--body-bg-color);
+	color: var(--text-color);
 }
 
 figure {

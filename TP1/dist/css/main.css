@@ -232,6 +232,8 @@ summary {
 
 body {
   font-family: "Istok Web", sans-serif;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
 }
 
 figure {
@@ -250,51 +252,70 @@ p {
 :root {
   --white: #fff;
   --black: #000;
-  --blue-50: #d9e0e7;
-  --blue-100: #bfccd8;
-  --blue-200: #a6b7c8;
-  --blue-300: #8da3b9;
-  --blue-400: #748ea9;
+  --blue-50: #f8fafb;
+  --blue-100: #d9e0e7;
+  --blue-200: #b9c7d4;
+  --blue-300: #9aadc0;
+  --blue-400: #7a94ad;
   --blue-500: #5d7a97;
-  --blue-600: #4d667e;
-  --blue-700: #3e5165;
-  --blue-800: #2e3d4b;
-  --blue-900: #1f2832;
-  --blue-950: #0f1419;
-  --pink-50: #fff4fa;
-  --pink-100: #ffcbe6;
-  --pink-200: #ffa2d2;
-  --pink-300: #ff7abe;
-  --pink-400: #ff51aa;
+  --blue-600: #4a6177;
+  --blue-700: #364758;
+  --blue-800: #232e38;
+  --blue-900: #0f1419;
+  --blue-950: black;
+  --pink-50: white;
+  --pink-100: #fff4fa;
+  --pink-200: #ffc1e1;
+  --pink-300: #ff8ec8;
+  --pink-400: #ff5baf;
   --pink-500: #ff2896;
-  --pink-600: #fe0082;
-  --pink-700: #d5006d;
-  --pink-800: #ad0058;
-  --pink-900: #840043;
-  --pink-950: #5b002f;
+  --pink-600: #f4007d;
+  --pink-700: #c10063;
+  --pink-800: #8e0049;
+  --pink-900: #5b002f;
+  --pink-950: #280014;
   --orange-50: white;
   --orange-100: white;
-  --orange-200: #ffeadf;
-  --orange-300: #ffd0b7;
-  --orange-400: #ffb58e;
+  --orange-200: #fffefe;
+  --orange-300: #ffddcb;
+  --orange-400: #ffbc98;
   --orange-500: #ff9b65;
-  --orange-600: #ff813c;
-  --orange-700: #ff6613;
-  --orange-800: #ea5200;
-  --orange-900: #c14400;
-  --orange-950: #983500;
-  --green-50: #a2ffff;
-  --green-100: #79ffff;
-  --green-200: #50ffff;
-  --green-300: #28ffff;
-  --green-400: #00fefe;
-  --green-500: #00d5d5;
-  --green-600: #00acac;
-  --green-700: #008383;
-  --green-800: #005b5b;
-  --green-900: #003232;
-  --green-950: #000909;
+  --orange-600: #ff7a32;
+  --orange-700: #fe5900;
+  --orange-800: #cb4700;
+  --orange-900: #983500;
+  --orange-950: #652300;
+  --green-50: white;
+  --green-100: #ccfff2;
+  --green-200: #99ffe5;
+  --green-300: #66ffd9;
+  --green-400: #33ffcc;
+  --green-500: #00ffbf;
+  --green-600: #00cc99;
+  --green-700: #009973;
+  --green-800: #00664c;
+  --green-900: #003326;
+  --green-950: black;
+  --cyan-50: #d5ffff;
+  --cyan-100: #a2ffff;
+  --cyan-200: #6fffff;
+  --cyan-300: #3cffff;
+  --cyan-400: #09ffff;
+  --cyan-500: #00d5d5;
+  --cyan-600: #00a2a2;
+  --cyan-700: #006f6f;
+  --cyan-800: #003c3c;
+  --cyan-900: #000909;
+  --cyan-950: black;
+  --body-bg-color: var(--white);
+  --text-color: var(--black);
   --main-radius: 1rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg-color: var(--black);
+    --text-color: var(--white);
+  }
 }
 
 .mt-1 {
@@ -376,6 +397,18 @@ p {
 }
 
 .bioCard {
+  /* Variables "locales" */
+  --bg-color: var(--blue-800);
+  --gradient-color1: var(--green-500);
+  --gradient-color2: var(--cyan-500);
+  --gradient-color3: var(--pink-500);
+  --gradient-color4: var(--orange-500);
+  --button-color: var(--pink-500);
+  --button-color-alt: var(--black);
+  --image-filter: saturate(0);
+  --separator-opacity: 1;
+  /* Utilisation des variables... */
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -383,12 +416,24 @@ p {
   align-items: stretch;
   gap: 0;
   width: 20rem;
-  background-color: var(--blue-800);
   color: var(--blue-500);
   border-radius: var(--main-radius);
   overflow: hidden;
   position: relative;
   padding: 2rem;
+}
+@media (prefers-color-scheme: dark) {
+  .bioCard {
+    --bg-color: var(--white);
+    --gradient-color1: var(--pink-500);
+    --gradient-color2: var(--orange-500);
+    --gradient-color3: var(--green-500);
+    --gradient-color4: var(--cyan-500);
+    --button-color: var(--blue-500);
+    --button-color-alt: var(--white);
+    --image-filter: saturate(1);
+    --separator-opacity: 0.6;
+  }
 }
 .bioCard__header {
   position: absolute;
@@ -397,7 +442,7 @@ p {
   right: 0;
   padding: 1rem;
   display: flex;
-  flex-direction: rew;
+  flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: flex-start;
@@ -408,6 +453,46 @@ p {
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+  display: inline-flex;
+  background: var(--white);
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50rem;
+  transform: translateY(0);
+  transition: transform 0.5s;
+}
+.bioCard__button svg {
+  margin: auto;
+  height: 50%;
+  width: auto;
+}
+.bioCard__button svg path {
+  fill: var(--button-color);
+}
+.bioCard__button:hover {
+  transform: translateY(-0.25rem);
+}
+.bioCard__button--alt {
+  display: inline-flex;
+  background: linear-gradient(to bottom, var(--gradient-color1), var(--gradient-color2));
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50rem;
+  transform: translateY(0);
+  transition: transform 0.5s;
+}
+.bioCard__button--alt svg {
+  margin: auto;
+  height: 50%;
+  width: auto;
+  height: auto;
+  width: 75%;
+}
+.bioCard__button--alt svg path {
+  fill: var(--button-color-alt);
+}
+.bioCard__button--alt:hover {
+  transform: translateY(-0.25rem);
 }
 .bioCard__figure {
   align-self: center;
@@ -419,7 +504,7 @@ p {
   width: 11rem;
   aspect-ratio: 1/1;
   object-fit: cover;
-  filter: saturate(0);
+  filter: var(--image-filter);
 }
 .bioCard__h1 {
   line-height: 1;
@@ -427,7 +512,7 @@ p {
   margin-top: 0;
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
-  background: linear-gradient(to bottom, var(--pink-500) 0%, var(--orange-500) 100%);
+  background: linear-gradient(to bottom, var(--gradient-color3) 0%, var(--gradient-color4) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -442,10 +527,13 @@ p {
 .bioCard__hr {
   width: 100%;
   border-color: var(--blue-500);
-  margin: 0;
+  border-bottom: none;
+  margin: 0 0 1rem;
+  opacity: var(--separator-opacity);
 }
 .bioCard__p {
   text-align: center;
+  margin: 0 0 3rem;
 }
 .bioCard__footer {
   position: relative;
@@ -457,10 +545,9 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--pink-500);
-  margin-left: -2rem;
-  margin-right: -2rem;
-  margin-bottom: -2rem;
+  background: linear-gradient(-187deg, var(--gradient-color4) -10%, var(--gradient-color3) 60%);
+  margin: -2rem;
+  margin-bottom: -3.75rem;
   transform: skewY(7deg);
 }
 .bioCard__ul {
@@ -473,6 +560,7 @@ p {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
 }
 
 /*# sourceMappingURL=main.css.map */

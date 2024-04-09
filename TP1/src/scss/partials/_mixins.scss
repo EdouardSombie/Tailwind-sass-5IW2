@@ -1,3 +1,5 @@
+@use "functions" as f;
+
 @mixin flexbox($direction, $wrap, $justify, $align, $gap: 0) {
 	display: flex;
 	flex-direction: $direction;
@@ -33,4 +35,29 @@
 	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+@mixin pillButton($background, $color, $bigIcon: false) {
+	display: inline-flex;
+	background: $background;
+	width: f.rem(32);
+	aspect-ratio: 1/1;
+	border-radius: 50rem; // Valeur grande au regard des dimensions du bloc
+	transform: translateY(0);
+	transition: transform 0.5s; // Cette valeur pourrait être dans une variable plus globale...
+	svg {
+		margin: auto;
+		height: 50%;
+		width: auto;
+		@if ($bigIcon) {
+			height: auto;
+			width: 75%;
+		}
+		path {
+			fill: $color;
+		}
+	}
+	&:hover {
+		transform: translateY(-0.25rem);
+	}
 }
