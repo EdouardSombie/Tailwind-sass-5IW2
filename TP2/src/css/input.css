@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Importer la typo, la mettre dans une var css --main-font */
+/* Appliquer cette font au body */
+
+/* Définition d'un composant .btn */
+@layer components {
+  .btn {
+    @apply bg-white flex h-8 w-8 rounded-full;
+    & svg {
+      @apply m-auto;
+      & path {
+        @apply fill-pink-500;
+      }
+    }
+  }
+  .btn-alt {
+    @apply from-aquamarine-400 to-altBlue-500 bg-gradient-to-b;
+    & svg {
+      & path {
+        @apply fill-black;
+      }
+    }
+  }
+}
